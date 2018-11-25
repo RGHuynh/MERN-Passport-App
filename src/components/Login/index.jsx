@@ -1,54 +1,52 @@
 import React, {Component} from 'react';
 
-export default class Signup extends Component {
-    constructor(){
+export default class Login extends Component {
+    constructor() {
         super();
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             username: '',
             password: ''
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        const name = event.target.name
-        this.setState({ 
-            [name]: event.target.value
-        });
+        const inputName = event.target.name
+        this.setState({
+            [inputName]: event.target.value
+        })
     }
 
     handleSubmit(event) {
         event.preventDefault();
     }
 
-    render(){
+    render() {
         return(
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="username">Username: </label>
-                    <input 
+                    <input
                         type="text"
                         name="username"
                         value={this.state.username}
                         onChange={this.handleChange}
-                    />
 
-                    <label htmlFor="password">Password: </label>
-                    <input 
+                     />
+
+                    <input
                         type="text"
                         name="password"
-                        value={this.state.password}
+                        value={this.state.username}
                         onChange={this.handleChange}
                     />
-                    <input 
-                        type="submit" 
-                        value="Submit"
-                    />
-                </form>
 
+                    <input 
+                        type="submit"
+                        value="Submit"
+                    /> 
+                </form>
             </div>
-            
         );
     }
 }
