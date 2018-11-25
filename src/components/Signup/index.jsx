@@ -20,6 +20,8 @@ export default class Signup extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log('sign-up-form, username: ');
+        console.log(this.state.username);
     }
 
     render(){
